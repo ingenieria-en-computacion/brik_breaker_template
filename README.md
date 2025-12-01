@@ -33,10 +33,10 @@ Implementar un juego funcional donde:
 
 /
 ├── src/
-│ └── main.c
+│   └── main.c
 │
 ├── docs/
-│ └── especificacion.pdf (o .md si entregas texto)
+│   └── especificacion.pdf   (o especificacion.md)
 │
 └── README.md
 
