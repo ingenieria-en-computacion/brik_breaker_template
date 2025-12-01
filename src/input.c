@@ -1,5 +1,5 @@
 #include "input.h"
-#include "conio_compat.h"
+#include "library_compat.h"
 
 int input_update() {
     // TODO:
