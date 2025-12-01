@@ -2,7 +2,7 @@
 
 echo "[TEST] Compilando proyecto..."
 
-gcc src/main.c -o juego 2> compile_errors.txt
+gcc src/main.c src/brick.c -o juego 2> compile_errors.txt
 
 if [ $? -ne 0 ]; then
     echo "[ERROR] No compila. Revisa syntax."
