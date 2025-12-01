@@ -1,28 +1,28 @@
 #include "game.h"
-#include "ball.h"
 #include "paddle.h"
-#include "bricks.h"
+#include "ball.h"
+#include "brick.h"
+#include "render.h"
+#include "input.h"
 #include "score.h"
-#include <stdio.h>
 
-// Flag interno
-static int finished = 0;
+// Aquí pueden declararse variables globales del estado del juego.
+// Los estudiantes deben completar esto.
+static int game_over = 0;
 
-// TODO: El estudiante debe implementar la lógica del juego
 void game_init() {
-    finished = 0;
-    paddle_init();
-    
+    // TODO: Inicializar paddle, pelota, matriz de ladrillos, puntaje, vidas, etc.
 }
 
-void game_update() {
-    // TODO: actualizar barra, pelota, colisiones, puntaje
-}
-
-void game_render() {
-    // TODO: limpiar pantalla y dibujar todo
+void game_loop_step() {
+    // TODO:
+    // 1. Leer entrada con input_update()
+    // 2. Actualizar pelota, paddle y colisiones
+    // 3. Verificar si la pelota cae → restar vida
+    // 4. Llamar a render_frame()
 }
 
 int game_is_over() {
-    return finished;
+    // TODO: retornar si el juego terminó
+    return game_over;
 }
