@@ -1,58 +1,59 @@
 #include "score.h"
 #include <stdio.h>
-#include <string.h>
 
-static Record records[10];
-static int num_records = 0;
-static int current_score = 0;
+// =======================
+//   PLANTILLA DEL MÓDULO DE SCORES
+// =======================
+//
+// IMPORTANTE: 
+// Este archivo NO incluye ninguna implementación real.
+// El estudiante DEBE escribir todo el código.
+//
+// Se dejan líneas y comentarios guía.
+// =======================
 
+// Variables sugeridas (el estudiante puede modificarlas)
+static Record records[10];   // Lista de récords
+static int num_records = 0;  // Número de récords cargados
+static int current_score = 0; // Puntaje actual
+
+// Reinicia el puntaje actual
 void score_reset() {
-    current_score = 0;
+    // TODO: Reiniciar puntaje a 0
 }
 
+// Incrementa el puntaje actual
 void score_add(int amount) {
-    current_score += amount;
+    // TODO: Sumar 'amount' al puntaje
 }
 
+// Devuelve el puntaje actual
 int score_get() {
-    return current_score;
+    // TODO: Regresar el puntaje actual
+    return 0;
 }
 
+// Carga las puntuaciones desde un archivo
 void score_load(const char *filename) {
-    FILE *f = fopen(filename, "r");
-    num_records = 0;
-
-    if (!f) return;
-
-    while (fscanf(f, "%3s %d", records[num_records].name, &records[num_records].score) == 2) {
-        num_records++;
-        if (num_records >= 10) break;
-    }
-
-    fclose(f);
+    // TODO:
+    // 1) Abrir archivo
+    // 2) Leer records línea por línea
+    // 3) Guardarlos en el arreglo 'records'
+    // 4) Actualizar 'num_records'
 }
 
+// Guarda los puntajes en un archivo
 void score_save(const char *filename) {
-    FILE *f = fopen(filename, "w");
-    if (!f) return;
-
-    // Inserción simple del puntaje actual
-    Record newRec;
-    strcpy(newRec.name, "AAA");
-    newRec.score = current_score;
-
-    records[num_records++] = newRec;
-
-    if (num_records > 10) num_records = 10;
-
-    for (int i = 0; i < num_records; i++)
-        fprintf(f, "%s %d\n", records[i].name, records[i].score);
-
-    fclose(f);
+    // TODO:
+    // 1) Abrir archivo en modo escritura
+    // 2) Escribir records ordenados
+    // 3) Incluir el nuevo puntaje
+    // 4) Cerrar archivo
 }
 
+// Mostrar puntajes
 void score_print() {
-    printf("\n====== TOP 10 ======\n");
-    for (int i = 0; i < num_records; i++)
-        printf("%d) %s — %d\n", i + 1, records[i].name, records[i].score);
+    // TODO:
+    // Imprimir los records cargados en pantalla
 }
+
