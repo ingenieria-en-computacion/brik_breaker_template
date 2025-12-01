@@ -1,10 +1,9 @@
 #include "input.h"
-#include <stdio.h>
+#include "conio_compat.h"
 
-// TODO: cambiar por getch() en Windows
-// Similar a la función que lee la entrada para el juego de snake
-char input_read() {
-    char c;
-    
-    return c;
+int input_update() {
+    // TODO:
+    // Leer teclas 'a' y 'd', regresar -1 o 1
+    // Si no se presiona nada, regresar 0
+    return 0;
 }
