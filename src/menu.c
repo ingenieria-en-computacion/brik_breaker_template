@@ -10,6 +10,6 @@ void menu_show() {
 
 int menu_get_option() {
     int opt;
-    // TODO: Completar la lectura de la opción. Debe ser similar a lo que se hizo para el juego de snake
+    // TODO: Completar la lectura de la opción. 
     return opt;
 }
