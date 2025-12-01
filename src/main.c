@@ -1,30 +1,40 @@
 #include <stdio.h>
 #include "menu.h"
 #include "game.h"
+#include "score.h"
 
-// ---------------------------------------------
-// Programa principal
-// Los estudiantes deben implementar:
-//  - El menú en menu.c
-//  - La lógica del juego en game.c
-// ---------------------------------------------
 int main() {
-    menu_show();
-    int option = menu_get_option();
+    int option;
 
-    // Opción 1: Iniciar el juego
-    if (option == 1) {
-        game_init();
+    score_load("scores.txt");
 
-        // Ciclo principal del juego
-        while (!game_is_over()) {
-            game_update();
-            game_render();
+    do {
+        menu_show();
+        option = menu_get_option();
+
+        switch(option) {
+            case 1:
+                game_init();
+                while(!game_is_over()) {
+                    game_update();
+                    game_render();
+                }
+                score_save("scores.txt");
+                break;
+
+            case 2:
+                score_print();
+                break;
+
+            case 3:
+                printf("Saliendo del juego...\n");
+                break;
+
+            default:
+                printf("Opción inválida\n");
         }
-    }
 
-    // Opción 2: Salir
-    printf("Gracias por jugar.\n");
+    } while(option != 3);
 
     return 0;
 }
