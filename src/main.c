@@ -1,14 +1,30 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include "brick.h"
+#include "menu.h"
+#include "game.h"
 
-/* Programa principal: muestra el menú y actúa según la opción.
-   Se deja un menú mínimo; los alumnos pueden implantar un loop
-   de lectura de opción e invocar iniciarJuego()/runGameLoop(). */
+// ---------------------------------------------
+// Programa principal
+// Los estudiantes deben implementar:
+//  - El menú en menu.c
+//  - La lógica del juego en game.c
+// ---------------------------------------------
+int main() {
+    menu_show();
+    int option = menu_get_option();
 
-int main(void) {
-    mostrarMenu();
-    /* Para que el test de menú detecte salida, dejamos aquí la llamada.
-       Los alumnos deberán implementar la lectura/acción de opciones. */
+    // Opción 1: Iniciar el juego
+    if (option == 1) {
+        game_init();
+
+        // Ciclo principal del juego
+        while (!game_is_over()) {
+            game_update();
+            game_render();
+        }
+    }
+
+    // Opción 2: Salir
+    printf("Gracias por jugar.\n");
+
     return 0;
 }
